@@ -1,4 +1,4 @@
-{{#if addNewEntry}}
+{{#if updateEntryForm}}
   <h1>New Entry</h1>
   <div>
     <form>
@@ -27,9 +27,9 @@
         {{input value=image id="image"}}
       </div>
 
-      <button {{action 'saveEntry'}}>Save</button>
+      <button {{action 'update'}}>Update</button>
     </form>
   </div>
 {{else}}
-  <button {{action 'entryFormShow'}}>New Entry</button>
+  <button {{action 'updateFormShow'}}>Update Entry</button>
 {{/if}}

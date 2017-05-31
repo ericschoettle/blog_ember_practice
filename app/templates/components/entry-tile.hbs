@@ -1,5 +1,4 @@
 <h3> {{entry.title}} </h3>
-<p>  By: {{entry.author}} </p>
-<p>
-  {{entry.body}}
-</p>
+<p>  By: {{entry.author}}, {{entry.date}} </p>
+
+{{#link-to 'entry' entry.id}}Go to Entry {{/link-to}}

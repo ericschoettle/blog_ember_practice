@@ -1,12 +1,11 @@
 import Ember from 'ember';
-
 export default Ember.Component.extend({
-  addNewEntry: false,
+  updateEntryForm: false,
   actions: {
-    entryFormShow(){
-      this.set('addNewEntry', true);
+    updateFormShow() {
+      this.set('updateEntryForm', true);
     },
-    saveEntry(){
+    update(entry) {
       var params = {
         title: this.get('title') ? this.get('title') : "",
         author: this.get('author') ? this.get('author') : "",
@@ -14,8 +13,8 @@ export default Ember.Component.extend({
         date: this.get('date') ? this.get('date') : "",
         image: this.get('image') ? this.get('image') : ""
       };
-      this.set('addNewEntry',false);
-      this.sendAction('saveEntry',params);
+      this.set('updateEntryForm', false);
+      this.sendAction('update', entry, params);
     }
   }
 });
