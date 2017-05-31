@@ -23,6 +23,37 @@ You will need the following things properly installed on your computer.
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
+## Planning
+*1. Create static pages
+  * About
+    * Content
+    * Link to Contact and Index
+  * Contact
+    * Content
+    * Link to About and Index
+*2. Create dynamic pages
+  * Index
+    * Static content
+    * Create model
+    * Component with Form to add thoughts and info
+      * Tie component to model
+    * Component to display entries
+      * Tie component to mode
+    * Link to About and Contacts.
+*3. Create individual entry view
+  * Create "entry" route
+  * Configure entry route to use ID
+  * Insert links with ids into the Index view
+  * CRUD
+   * Component to update entries
+      * Tie component to model
+    * Button to delete
+      * Tie button to model
+*4. Replace links with Navbar
+*5. Styling
+*6. Add tags with a many-to-many relationship. 
+
+
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details
