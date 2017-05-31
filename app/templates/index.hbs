@@ -1,1 +1,11 @@
-{{outlet}}
+<h1>Welcome to Bug Out</h1>
+
+<ul>
+  {{#each model as |entry|}}
+    {{entry-tile entry=entry}}
+  {{/each}}
+</ul>
+
+
+{{#link-to 'contact'}} Click Here to Contact us{{/link-to}}<br>
+{{#link-to 'about'}}About us{{/link-to}}
