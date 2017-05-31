@@ -14,8 +14,8 @@ export default Ember.Component.extend({
         date: this.get('date') ? this.get('date') : "",
         image: this.get('image') ? this.get('image') : ""
       };
-      this.set('addNewEntry',false);
-      this.sendAction('saveEntry',params);
+      this.set('addNewEntry', false);
+      this.sendAction('saveEntry', params);
     }
   }
 });
