@@ -1,4 +1,8 @@
-#back{
-  background: blue;
-  color: blue;
+.navbar-collapse {
+  text-align:center;
+  font-size: 20px;
+}
+.navbar-nav {
+    display:inline-block;
+    float:none;
 }
