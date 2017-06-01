@@ -1,15 +1,40 @@
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel panel-heading">
+      <h1>{{model.title}}</h1>
+    </div>
+    <div class="panel panel-body">
+      <h3>By {{model.author}}, {{model.date}}</h3>
 
-<h1>{{model.title}}</h1>
+      <p>
+        {{model.body}}
+      </p>
 
-<h3>By {{model.author}}, {{model.date}}</h3>
+      {{update-entry entry=model update="update"}}<br>
 
-<p>
-  {{model.body}}
-</p>
+      <button class="btn btn-info"{{action 'delete' model}}>Delete Entry</button><br>
+      <br>
+    </div>
+  </div>
 
-<h2>Enter your comment</h2>
-{{new-comment entry=model saveComment='saveComment'}}
 
-{{update-entry entry=model update="update"}}
 
-<button {{action 'delete' model}}>Delete Entry</button>
+
+
+
+  <div class="panel panel-success">
+    <div class="panel panel-heading">
+      <h2>{{if model.comments "Comments"}}</h2>
+    </div>
+    <div class="panel panel-body">
+      {{#each model.comments as |comment|}}
+        {{comment-tile comment=comment destroyComment="destroyComment"}}
+      {{/each}}
+      <br>
+      {{new-comment entry=model saveComment='saveComment'}}<br>
+    </div>
+  </div>
+
+
+
+</div>

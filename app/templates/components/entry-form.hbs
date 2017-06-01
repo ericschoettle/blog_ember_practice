@@ -1,6 +1,6 @@
 {{#if addNewEntry}}
   <h1>New Entry</h1>
-  <div>
+  <div class="container">
     <form>
       <div class="form-group">
         <label for="title">Title</label>
@@ -27,9 +27,9 @@
         {{input value=image id="image"}}
       </div>
 
-      <button {{action 'saveEntry'}}>Save</button>
+      <button class="btn btn-success"{{action 'saveEntry'}}>Save</button>
     </form>
   </div>
 {{else}}
-  <button {{action 'entryFormShow'}}>New Entry</button>
+  <button class="btn btn-success"{{action 'entryFormShow'}}>New Entry</button>
 {{/if}}

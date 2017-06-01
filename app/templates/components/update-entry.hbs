@@ -1,6 +1,6 @@
 {{#if updateEntryForm}}
   <h1>New Entry</h1>
-  <div>
+  <div class="container">
     <form>
       <div class="form-group">
         <label for="title">Title</label>
@@ -19,7 +19,7 @@
 
       <div class="form-group">
         <label for="date">Date</label>
-        {{input value=date id="date" type="date"}}
+        {{input value=date class="form-control" id="date" type="date"}}
       </div>
 
       <div class="form-group">
@@ -27,9 +27,9 @@
         {{input value=image id="image"}}
       </div>
 
-      <button {{action 'update' entry}}>Update</button>
+      <button class="btn btn-success"{{action 'update' entry}}>Update</button>
     </form>
   </div>
 {{else}}
-  <button {{action 'updateFormShow'}}>Update Entry</button>
+  <button class="btn btn-info"{{action 'updateFormShow'}}>Update Entry</button>
 {{/if}}

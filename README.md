@@ -47,8 +47,8 @@ You will need the following things properly installed on your computer.
   * CRUD
    * Component to update entries
       * Tie component to model
-    * Button to delete
-      * Tie button to model
+    * button class="btn btn-success"to delete
+      * Tie button class="btn btn-success"to model
 *4. Replace links with Navbar
 *5. Styling
 *6. Add tags with a many-to-many relationship. 
