@@ -17,24 +17,18 @@
     </div>
   </div>
 
-
-
-
-
-
   <div class="panel panel-success">
     <div class="panel panel-heading">
       <h2>{{if model.comments "Comments"}}</h2>
     </div>
     <div class="panel panel-body">
       {{#each model.comments as |comment|}}
-        {{comment-tile comment=comment destroyComment="destroyComment"}}
+        {{comment-tile comment=comment destroyComment="destroyComment" updateComment="updateComment"}}
       {{/each}}
       <br>
       {{new-comment entry=model saveComment='saveComment'}}<br>
     </div>
   </div>
-
 
 
 </div>

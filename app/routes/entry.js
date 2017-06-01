@@ -29,16 +29,27 @@ export default Ember.Route.extend({
     },
 
     saveComment(params) {
+      console.log(params)
       var newComment = this.store.createRecord('comment', params);
       var entry = params.entry;
       entry.get('comments').addObject(newComment);
       newComment.save().then(function(){
-        entry.save();
+        return entry.save();
       });
     },
 
     destroyComment(comment) {
      comment.destroyRecord();
-   }
+    },
+
+    updateComment(comment, params) {
+      debugger
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          comment.set(key, params[key]);
+        }
+      });
+      return comment.save();
+    }
   }
 });

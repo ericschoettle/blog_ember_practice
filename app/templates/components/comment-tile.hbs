@@ -5,3 +5,28 @@
 </p>
 
 <button class="btn btn-success"{{action 'delete' comment}}> Delete Comment</button><br>
+
+{{#if updateCommentForm}}
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="updateTitle">Title</label>
+        {{input value=updateTitle id="updateTitle"}}
+      </div>
+
+      <div class="form-group">
+        <label for="updateUser">User</label>
+        {{input value=updateUser id="updateUser"}}
+      </div>
+
+      <div class="form-group">
+        <label for="updateBody">Enter your buggy thoughts</label>
+        {{textarea value=updateBody id="updateBody"}}
+      </div>
+
+      <button class="btn btn-success"{{action 'updateComment' comment}}>Update</button>
+    </form>
+  </div>
+{{else}}
+  <button class="btn btn-info"{{action 'showUpdateComment'}}>Update Comment</button>
+{{/if}}
