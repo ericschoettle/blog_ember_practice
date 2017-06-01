@@ -29,11 +29,20 @@ export default Ember.Route.extend({
     },
 
     saveComment(params) {
-      console.log(params)
       var newComment = this.store.createRecord('comment', params);
       var entry = params.entry;
       entry.get('comments').addObject(newComment);
       newComment.save().then(function(){
+        return entry.save();
+      });
+    },
+
+    saveTag(params) {
+      debugger
+      var newTag = this.store.createRecord('tag', params);
+      var entry = params.entry;
+      entry.get('tags').addObject(newTag);
+      newTag.save().then(function(){
         return entry.save();
       });
     },

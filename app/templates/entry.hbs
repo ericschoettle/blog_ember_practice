@@ -30,5 +30,16 @@
     </div>
   </div>
 
-
+  <div class="panel panel-success">
+    <div class="panel panel-heading">
+      <h2>{{if model.tags "Tags"}}</h2>
+    </div>
+    <div class="panel panel-body">
+      {{#each model.tags as |tag|}}
+        {{tag-tile tag=tag destroyTag="destroyTag" updateTag="updateTag"}}
+      {{/each}}
+      <br>
+      {{new-tag entry=model saveTag='saveTag'}}<br>
+    </div>
+  </div>
 </div>
